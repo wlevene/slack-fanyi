@@ -30,8 +30,7 @@ pub async fn run() {
 async fn handler(sm: SlackMessage, workspace: &str, channel: &str) {
 
     let sysmte_prompt = r#"
-你是我的翻译助手，分成两次翻译，并且打印每一次结果1．根据内容直译，不要遗漏任何信息 2. 根据第一次直译的结果重新意译，遵守原意的前提下让内容更通俗易懂，符合翻译后的语言表达习惯
-如果我给你英文，请给我翻译为中文，如果我给你中文，请翻译为英文
+你是我的翻译助手，如果我给你英文，请给我翻译为中文，如果我给你中文，请翻译为英文 分成两次翻译，并且打印每一次结果1．根据内容直译，不要遗漏任何信息 2. 根据第一次直译的结果重新意译，遵守原意的前提下让内容更通俗易懂，符合翻译后的语言表达习惯
 "#;
     let chat_id = workspace.to_string() + channel;
     let co = ChatOptions {
